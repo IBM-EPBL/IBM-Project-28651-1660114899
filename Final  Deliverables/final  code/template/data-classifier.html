@@ -1,0 +1,156 @@
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Health Care Data</title>
+	</head>
+	<body>
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark" style="background-color: rgb(13, 102, 87);">
+			<span class="navbar-brand mb-0 h1">Health Care data Test</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<legend style="color: rgb(41, 15, 134);"><b>Health  Care data Test Form</b></legend><br>
+				  <div class="card card-body" style="background-color: rgb(194 245 236 / 56%);">
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="hospital_code">Hospital_code</label>
+							<input type="number" class="form-control" id=hospital_Code" name="hospital_code" required>
+						</div>
+                                                <div class="col-sm-3">
+							<label for="age">Age</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="dp">Department</label>
+							<select class="form-control" id="dp" name = "dp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">Surgery</option>
+							  <option value = "2">TB & Chest disease</option>
+							  <option value = "3">Radiotherapy</option>
+							  <option value = "4">Anesthesia</option>
+                                                          <option value = "5">Gynecology</option>
+							</select>
+
+                                                        <label for="admission_types">Type of Admission</label>
+							<select class="form-control" id="toa" name = "toa" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">Emergency</option>
+							  <option value = "2">Trauma</option>
+							  <option value = "3">Urgent</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="admission_deposit">Admission_Deposit</label>
+							<input type="number" class="form-control" id="admission_deposit" name="admission_deposit"  required>
+						  </div>
+						  <div class="col-sm">
+                                                        <label for="ward_code">Ward_Facility_Code</label>
+							<select class="form-control" id="ward_code" name="ward_code" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">A</option>
+							  <option value = "2">B</option>
+                                                          <option value = "3">C</option>
+                                                          <option value = "4">D</option>
+                                                          <option value = "5">E</option>
+                                                          <option value = "6">F</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="illness">Severity of illness</label>
+							<select class="form-control" id="illness" name="illness" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">Extreme</option>
+							  <option value = "2">Minor</option>
+                                                          <option value = "3">Moderate</option>
+							</select>
+						</div>
+					  </div>
+
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="ward_type">Ward_Type</label>
+							        <select class="form-control" id="ward_type" name="ward_type" required>
+							          <option disabled selected value> -- Select an Option -- </option>
+							          <option value = "1">P</option>
+							          <option value = "2">Q</option>
+                                                                  <option value = "3">R</option>
+                                                                  <option value = "4">S</option>
+                                                                  <option value = "5">T</option>
+                                                                  <option value = "6">U</option>
+							         </select>
+							  </div>
+							  <div class="col-sm">
+								<label for="city_code">City_Code_Hospital</label>
+								<input type="number" class="form-control" id="city_code" name="city_code" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="hospital_region_code">Hospital_region_code</label>
+								<select class="form-control" id="hospital_region_code" name="hospital_region_code" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "1">X</option>
+								  <option value = "2">Y</option>
+                                                                  <option value = "3">Z</option>
+								</select>
+							  </div>
+							  <div class="col-sm">
+								<label for="bed_grade">Bed Grade</label>
+								<input type="number" step="any" class="form-control" id="bed_grade" name="bed_grade" required>
+							  </div>
+                                                          <div class="col-sm">
+								<label for="patient_id">patientid</label>
+								<input type="number" step="any" class="form-control" id="patient_id" name="patient_id" required>
+							  </div>
+						  </div>
+						  <br>
+						  <div class="form-group  row">
+                                                          <div class="col-sm">
+							       <label for="city_code_patient">City_Code_Patient</label>
+							       <input type="number" step="any" class="form-control" id="city_code_patient" name="city_code_patient" required>
+							  </div>        
+						          <div class="col-sm">
+								<label for="visitor_patient">Visitors with Patient</label>
+								<input type="number" step="any" class="form-control" id="visitor_patient" name="visitor_patient" required>
+							  </div>  
+                                                          <div class="col-sm">
+								<label for="stay">Stay</label>
+								<input type="text" step="any" class="form-control" id="stay" name="stay" required>
+							  </div>   
+						
+					  </div>
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					  </div>
+
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="color:red">{{result}}</strong>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+
+		</div>
+
+	</body>
+</html>
+
